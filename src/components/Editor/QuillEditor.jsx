@@ -48,10 +48,16 @@ const QuillEditor = ({ id, data, tutorial_id }) => {
         ydoc.on("update", () => {
           // deltaText is quill editor's data structure to store text
           const deltaText = ydoc.getText("quill").toDelta();
-          var config = {};
+          var config = {
+            multiLineParagraph: true,
+            encodeHtml: false,
+            inlineStyles: false
+          };
           var converter = new QuillDeltaToHtmlConverter(deltaText, config);
 
           var html = converter.convert();
+          // console.log("deltaText", deltaText);
+          // console.log("html", html);
           setCurrentStepContent(tutorial_id, id, html)(firestore, dispatch);
         });
         provider = new FirestoreProvider(onlineFirebaseApp, ydoc, basePath, {
