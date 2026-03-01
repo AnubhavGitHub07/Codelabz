@@ -65,7 +65,8 @@ describe("Editor Test | CodeLabz", () => {
     cy.get("[data-testid=tutorialTitle]").contains("test tutorial");
     cy.get("[data-testId=editorMode]").click();
     cy.wait(2000);
-    cy.get(".ql-editor").clear();
+    cy.get(".ql-editor").type("{selectall}{backspace}").clear();
+    cy.wait(1000);
     cy.get(".ql-editor").type("test{enter}line2");
     cy.get("[data-testId=stepTitleInput]").type(
       "{selectall}{backspace}Test step1"
@@ -91,7 +92,9 @@ describe("Editor Test | CodeLabz", () => {
   });
 
   it("should support rich text", function () {
-    cy.get(".ql-editor").clear().should("have.text", "");
+    cy.wait(2000);
+    cy.get(".ql-editor").type("{selectall}{backspace}").clear().should("have.text", "");
+    cy.wait(1000);
     cy.get(".ql-editor")
       .type("{ctrl}b")
       .type("bold")
