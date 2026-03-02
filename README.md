@@ -1,11 +1,27 @@
 <h1 align="center">CodeLabz</h1>
 
-**A platform for interactive online tutorials — built for organizations and learners alike.**
+<p align="center">
+  <b>A platform for interactive online tutorials — built for organizations and learners alike.</b>
+</p>
 
-[![Slack](https://img.shields.io/badge/Slack-Join%20Us-blue?logo=slack)](https://app.slack.com/client/T06C3R6HVNG/C06C1CL3S2W)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/c2siorg/Codelabz?style=social)](https://github.com/c2siorg/Codelabz)
-[![Live Demo](https://img.shields.io/badge/demo-dev.codelabz.io-brightgreen)](https://dev.codelabz.io/)
+<p align="center">
+  <a href="https://app.slack.com/client/T06C3R6HVNG/C06C1CL3S2W"><img src="https://img.shields.io/badge/Slack-Join%20Us-blue?logo=slack" alt="Slack"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
+  <a href="https://github.com/c2siorg/Codelabz"><img src="https://img.shields.io/github/stars/c2siorg/Codelabz?style=social" alt="GitHub Stars"></a>
+</p>
+
+---
+
+## 📑 Table of Contents
+
+- [📖 Overview](#-overview)
+- [✨ Key Features](#-key-features)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [📁 Project Structure](#-project-structure)
+- [🚀 Quick Start](#-quick-start)
+- [🤝 Contributing](#-contributing)
+- [📜 License](#-license)
+- [💬 Community & Support](#-community--support)
 
 ---
 
@@ -15,17 +31,16 @@
 
 The project is developed and maintained under [c2siorg](https://github.com/c2siorg) and welcomes contributors from around the world.
 
-
 ---
 
 ## ✨ Key Features
 
-- **Interactive Guided Tutorials**: Engaging step-by-step coding lessons for users.
-- **Organization Management**: Tools for organizations to create, manage, and publish content.
-- **Collaborative Editor**: A powerful rich-text editor for seamless tutorial creation.
-- **Real-time Synchronization**: Powered by Firebase and Yjs for collaborative workflows.
-- **Progress Tracking**: Users can track their engagement and learning journey.
-- **Modern & Responsive UI**: A sleek, user-friendly interface built with React and Material UI.
+- **Interactive Guided Tutorials** — Engaging step-by-step coding lessons for users.
+- **Organization Management** — Tools for organizations to create, manage, and publish content.
+- **Collaborative Editor** — A powerful rich-text editor for seamless tutorial creation.
+- **Real-time Synchronization** — Powered by Firebase and Yjs for collaborative workflows.
+- **Progress Tracking** — Users can track their engagement and learning journey.
+- **Modern & Responsive UI** — A sleek, user-friendly interface built with React and Material UI.
 
 ---
 
@@ -110,9 +125,13 @@ Contributions make the open-source community an amazing place to learn, inspire,
 1. Please read our **[CONTRIBUTING.md](./CONTRIBUTING.md)** for details on our code of conduct and the process for submitting pull requests.
 2. Adhere to our **[CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)** to ensure a welcoming environment for all.
 
+---
+
 ## 📜 License
 
-Distributed under the **Apache 2.0 License**. See `LICENSE` for more information.
+Distributed under the **Apache 2.0 License**. See **[LICENSE](./LICENSE)** for more information.
+
+---
 
 ## 💬 Community & Support
 
@@ -122,9 +141,3 @@ Distributed under the **Apache 2.0 License**. See `LICENSE` for more information
 ---
 
 <p align="center">Built with ❤️ by <b>c2siorg</b></p>
-
-
-
-
-
-
