@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://app.slack.com/client/T06C3R6HVNG/C06C1CL3S2W"><img src="https://img.shields.io/badge/Slack-Join%20Us-blue?logo=slack" alt="Slack"></a>
+  <a href="https://c2si-org.slack.com"><img src="https://img.shields.io/badge/Slack-Join%20Us-blue?logo=slack" alt="Slack"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
   <a href="https://github.com/c2siorg/Codelabz"><img src="https://img.shields.io/github/stars/c2siorg/Codelabz?style=social" alt="GitHub Stars"></a>
 </p>
@@ -200,10 +200,15 @@ Distributed under the **Apache 2.0 License**. See **[LICENSE](./LICENSE)** for m
 
 ## 💬 Community & Support
 
-```markdown
-- **Slack**: [Join our Slack workspace](https://app.slack.com/client/T06C3R6HVNG/C06C1CL3S2W) to ask any doubts or share suggestions.
-```
-- **Issues**: Report bugs or request features via the [GitHub Issues](https://github.com/c2siorg/Codelabz/issues) page.
+We'd love to have you in our community! Here's how to connect:
+
+- **Slack**: [Join our Slack workspace](https://c2si-org.slack.com) to ask questions, share ideas, and chat with contributors.
+
+- **GitHub Issues**: Found a bug or have a feature request? Open an issue on the [Issues page](https://github.com/c2siorg/Codelabz/issues).
+
+- **GitHub Discussions**: Have a question or want to share something? Head over to [Discussions](https://github.com/c2siorg/Codelabz/discussions).
+
+- ⭐ **Star This Repo**: If you find CodeLabz useful, please consider [giving it a star](https://github.com/c2siorg/Codelabz) — it helps the project grow!
 
 ---
 
