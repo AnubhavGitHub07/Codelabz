@@ -43,8 +43,6 @@ The project is developed and maintained under [c2siorg](https://github.com/c2sio
 
 ## 📁 Project Structure
 
-## 📁 Project Structure
-
 ```text
 .
 ├── .github/              # CI/CD workflows and issue/PR templates
