@@ -36,40 +36,42 @@ The project is developed and maintained under [c2siorg](https://github.com/c2sio
 
 ## 🖥️ App Preview
 
-### Sign In with Google
+Here's a quick walkthrough of the user experience:
 
-<p align="center">
-  <img src="docs/screenshots/google-signin.png" alt="Google Sign-In" width="600"/>
-</p>
-
-<p align="center"><i>Users can quickly sign in using their Google account.</i></p>
-
-### Create a New Account
-
-<p align="center">
-  <img src="docs/screenshots/new-account.png" alt="Create Account" width="600"/>
-</p>
-
-<p align="center"><i>New users can create an account with their email and password.</i></p>
-
-### Email Verification
+### ⚠️ Email Verification (Known Issue)
 
 <p align="center">
   <img src="docs/screenshots/verification-email.png" alt="Verification Email Prompt" width="600"/>
 </p>
 
-<p align="center"><i>After sign-up, users are prompted to verify their email address.</i></p>
+<p align="center"><i>If you register with an email, you'll be asked to verify it — but the email is never sent.</i></p>
 
 > [!WARNING]
-> **Known Issue:** Email verification links are **not yet functional**. The confirmation email is not actually sent. If you want to log in and explore the app, please use the **Sign in with Google** option instead.
+> **Heads up!** Email verification is **not yet implemented**. If you sign up using email and password, you'll see a prompt asking you to verify your email, but the verification link will never arrive. **Use the Google Sign-In method below instead.**
 
-### Dashboard
+### 📝 Create an Account
+
+<p align="center">
+  <img src="docs/screenshots/new-account.png" alt="Create Account" width="600"/>
+</p>
+
+<p align="center"><i>The account creation screen — you can sign up with email, but Google is recommended for now.</i></p>
+
+### ✅ Sign In with Google (Recommended)
+
+<p align="center">
+  <img src="docs/screenshots/google-signin.png" alt="Google Sign-In" width="600"/>
+</p>
+
+<p align="center"><i>The easiest way to get started — sign in with your Google account and you're in!</i></p>
+
+### 🏠 Dashboard
 
 <p align="center">
   <img src="docs/screenshots/dashboard.png" alt="CodeLabz Dashboard — Discover Organizations" width="800"/>
 </p>
 
-<p align="center"><i>The CodeLabz dashboard — browse organizations by category and explore popular tags.</i></p>
+<p align="center"><i>Once logged in, explore organizations by category and discover tutorials through popular tags.</i></p>
 
 ---
 
