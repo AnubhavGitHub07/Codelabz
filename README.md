@@ -1,107 +1,132 @@
-# Table of Content 📑
-
-1. [CodeLabz](#codelabz)
-2. [Deployment](#deployment)
-3. [Community](#community)
-4. [Contribute](#contribute)
-5. [FAQs (Frequently Asked Questions)](#faqs)
-
 # CodeLabz
 
-**CodeLabz** is a platform where the users can engage with online tutorials and the organizations can create tutorials for the users. The platform will be developed using ReactJS frontend library and the backend will be developed using the Google Cloud Firestore and Google Firebase Real-Time database.
+**A platform for interactive online tutorials — built for organizations and learners alike.**
 
-# Deployment
+[![Slack](https://img.shields.io/badge/Slack-Join%20Us-blue?logo=slack)](https://app.slack.com/client/T06C3R6HVNG/C06C1CL3S2W)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/c2siorg/Codelabz?style=social)](https://github.com/c2siorg/Codelabz)
+[![Live Demo](https://img.shields.io/badge/demo-dev.codelabz.io-brightgreen)](https://dev.codelabz.io/)
 
-You can see the app live at [https://dev.codelabz.io/](https://dev.codelabz.io/)
+---
 
-# Community
+## 📖 Overview
 
-Join and communicate with other members on our community. We communicate on gitter.
+**CodeLabz** is an open-source platform where **organizations can create and publish coding tutorials** and **users can engage with them interactively**. It provides a seamless environment for hands-on learning through step-by-step guided tutorials, a collaborative rich-text editor, and real-time organization management.
 
-[![Gitter](https://badges.gitter.im/scorelab/CodeLabz.svg)](https://gitter.im/scorelab/CodeLabz?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+The project is developed and maintained under [c2siorg](https://github.com/c2siorg) and welcomes contributors from around the world.
 
-# Contribute
 
-Contributions are always welcome!
+---
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for ways to get started.
+## ✨ Key Features
 
-Please adhere to this project's [code of conduct](./code_of_conduct.md).
+- **Interactive Guided Tutorials**: Engaging step-by-step coding lessons for users.
+- **Organization Management**: Tools for organizations to create, manage, and publish content.
+- **Collaborative Editor**: A powerful rich-text editor for seamless tutorial creation.
+- **Real-time Synchronization**: Powered by Firebase and Yjs for collaborative workflows.
+- **Progress Tracking**: Users can track their engagement and learning journey.
+- **Modern & Responsive UI**: A sleek, user-friendly interface built with React and Material UI.
 
-# FAQs
+---
 
-### 1. Do I need to purchase Blaze plan to run the app ?
+## 🛠️ Tech Stack
 
-### Answer -
+| Category | Technologies |
+|---|---|
+| **Frontend** | React, Vite, Redux, Material UI (MUI), Ant Design Icons |
+| **Backend** | Firebase (Firestore, Real-time DB, Cloud Functions) |
+| **Collaboration** | Yjs, Quill (Rich Text Editor) |
+| **Testing** | Cypress (E2E), Storybook (Component Dev) |
+| **Tooling** | ESLint, Prettier, Husky |
 
-No, you don't need to purchase Blaze plan to run the app. You need to purchase it only if you want to deploy firebase cloud functions.
+---
 
-<hr/>
+## 📁 Project Structure
 
-### 2. `npm install` command is not executing successfully in my system.
+## 📁 Project Structure
 
-### Answer -
+```text
+.
+├── .github/              # CI/CD workflows and issue/PR templates
+├── .husky/               # Pre-commit git hooks
+├── .storybook/           # Storybook configuration
+├── cypress/              # End-to-end testing suite
+├── designs/              # UI/UX design specifications
+├── functions/            # Firebase Cloud Functions (Backend)
+├── public/               # Static assets (favicons, core HTML)
+├── src/                  # Main Application Source
+│   ├── assets/           # Images, SVGs, and web resources
+│   ├── auth/             # Auth providers and login/signup logic
+│   ├── components/       # Feature-specific UI components
+│   ├── config/           # App-level configurations
+│   ├── css/              # Global and component styles (LESS/CSS)
+│   ├── globalComponents/ # Foundational UI elements (Buttons, Inputs)
+│   ├── helpers/          # Utility functions and validation logic
+│   ├── store/            # Redux global state management
+│   ├── stories/          # Storybook component stories
+│   ├── App.jsx           # Root application component
+│   ├── main.jsx          # Entry point for React rendering
+│   └── routes.jsx        # Route definitions and navigation
+├── testdata/             # Sample data for local emulators
+├── .env.sample           # Environment variables template
+├── firebase.json         # Firebase services configuration
+├── Makefile              # Development command shortcuts
+├── package.json          # Project metadata and dependencies
+└── vite.config.js        # Vite build configuration
+```
 
-First of all make sure that your are using version 14 of node. If the problem still persists try `npm install --legacy-peer-deps`.
+---
 
-<hr/>
+## 🚀 Quick Start
 
-### 3. Login/Signup is not working.
+Get the project up and running on your local machine in just a few steps:
 
-<img src="https://files.gitter.im/5eb21f15d73408ce4fe2cb37/Jl4t/image.png" width="600">
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/c2siorg/Codelabz.git
+   cd Codelabz
+   ```
 
-### Solution :-
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-This problem generally arises when you have not setuped/started the Firebase emulators.
+3. **Set up Environment Variables**:
+   Create a `.env` file based on `.env.sample` and add your Firebase configuration.
 
-1. [Setup firebase emulator](https://github.com/scorelab/Codelabz/blob/master/CONTRIBUTING.md#firebase-setup).
-2. [Start the Emulators](https://github.com/scorelab/Codelabz/blob/master/CONTRIBUTING.md#run-firebase-emulator)
-3. Run the app using `npm run dev`.
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
 
-> 📝**NOTE** : Remember to start the emulators before running the app.
+> [!TIP]
+> For a detailed, step-by-step guide on setting up Firebase, local emulators, and troubleshooting, please refer to our **[INSTALLATION.md](./INSTALLATION.md)**.
 
-- To start emulators - `firebase emulators:start --import=firebase.json --project <your-project-id>`. <br/>
-- In some case all the emulator will not start. So you can execute a separate command for a particular emulator<br/>
-For example if auth emulator is not starting you can use this command - <br/> `firebase emulators:start --import=firebase.json --project <your-project-id> --only auth`.
-<hr/>
+---
 
-### 4. I am creating new account and it says that confirmation mail is sent to my email but I didn't got any mail.
+## 🤝 Contributing
 
-### Answer :-
+Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-This feature is not implemented completely and we are currently working on this. If you still want to login/signup, you can try login/signup with google option.
+1. Please read our **[CONTRIBUTING.md](./CONTRIBUTING.md)** for details on our code of conduct and the process for submitting pull requests.
+2. Adhere to our **[CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)** to ensure a welcoming environment for all.
 
-<hr/>
+## 📜 License
 
-### 5. I have done the environment setup, but when I start the app it is showing white/blank screen.
+Distributed under the **Apache 2.0 License**. See `LICENSE` for more information.
 
-### Solution :-
+## 💬 Community & Support
 
-This problem can arise in multiple scenarios :-
+- **Slack**: [Join our Slack workspace](https://app.slack.com/client/T06C3R6HVNG/C06C1CL3S2W) to chat with maintainers and other contributors.
+- **Issues**: Report bugs or request features via the [GitHub Issues](https://github.com/c2siorg/Codelabz/issues) page.
 
-1. Check the browser console and see what error are you getting there and try to fix it.
-2. Make sure that you have created `.env` file and placed all values to the keys.
-3. In some cases it can also arise due to any active ad-blocker extension in your browser. So make sure to turn it off.
-<hr/>
+---
 
-### 6. make command not found
+Built with ❤️ by <b>c2siorg</b>
 
-![image](https://user-images.githubusercontent.com/88550925/224977291-25101480-608b-41e6-a0b6-f03ff23f66b4.png)
 
-### Solution :-
 
-The Make Command Not Found error indicates that the make utility is either not installed on the system or it’s not present in the PATH variable.
 
-Follow this link to fix this issue.
-[Click here](https://www.technewstoday.com/fix-make-command-not-found/)
 
-### 7. I want to contribute but don't know where to start.
 
-### Answer :-
-
-1. First of all try to make yourself comfortable with the app and explore its functionalities.
-2. Have a look into issues that are already raised and are not assigned to anyone and ask the mentors to get it assigned it to you.
-3. If you want to work on a new issue, first try to discuss it in the gitter channel with the mentors and then raise the issue.
-<hr/>
-
-### ❓ Got more questions, ask it in our [gitter channel](https://matrix.to/#/#scorelab_CodeLabz:gitter.im) and we will love ❤ to answer them.
