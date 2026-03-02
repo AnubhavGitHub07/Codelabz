@@ -200,7 +200,9 @@ Distributed under the **Apache 2.0 License**. See **[LICENSE](./LICENSE)** for m
 
 ## 💬 Community & Support
 
-- **Slack**: [Join our Slack workspace](https://app.slack.com/client/T06C3R6HVNG/C06C1CL3S2W) to chat with maintainers and other contributors.
+```markdown
+- **Slack**: [Join our Slack workspace](https://app.slack.com/client/T06C3R6HVNG/C06C1CL3S2W) to ask any doubts or share suggestions.
+```
 - **Issues**: Report bugs or request features via the [GitHub Issues](https://github.com/c2siorg/Codelabz/issues) page.
 
 ---
