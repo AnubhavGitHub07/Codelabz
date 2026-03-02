@@ -1,4 +1,6 @@
-# CodeLabz
+```markdown
+<h1 align="center">CodeLabz</h1>
+```
 
 **A platform for interactive online tutorials — built for organizations and learners alike.**
 
@@ -121,7 +123,9 @@ Distributed under the **Apache 2.0 License**. See `LICENSE` for more information
 
 ---
 
-Built with ❤️ by <b>c2siorg</b>
+```markdown
+<p align="center">Built with ❤️ by <b>c2siorg</b></p>
+```
 
 
 
