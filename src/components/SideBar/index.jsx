@@ -120,7 +120,7 @@ const SideBar = ({
         <Drawer
           closable="true"
           open={open}
-          anchor="right"
+          anchor="left"
           onClose={toggleSlider}
           data-testId="sidebar_mobile"
           style={{ zIndex: 99999 }}

@@ -1,6 +1,7 @@
 @import "./css/spacing.css";
 
 @import "./css/codelabz.css";
+
 img {
   max-width: 100%;
 }
@@ -57,14 +58,14 @@ img {
 
 // footer is visible in the screen
 .row-fullheight {
-  min-height: calc(
-    100vh - 64px - 245px
-  ); /* 64px is the height of the navbar, 245px is the height of the footer */
+  min-height: calc(100vh - 64px - 245px);
+  /* 64px is the height of the navbar, 245px is the height of the footer */
 }
 
 // footer is below the visible screen
 .row-footer-below {
-  min-height: calc(100vh - 72px); /* 72px is the height of the navbar */
+  min-height: calc(100vh - 72px);
+  /* 72px is the height of the navbar */
 }
 
 .auth-margin {
@@ -97,11 +98,13 @@ img {
   }
 
   .row-fullheight {
-    min-height: 100%; /* 72px is the height of the navbar, 285px is the height of the footer */
+    min-height: 100%;
+    /* 72px is the height of the navbar, 285px is the height of the footer */
   }
 
   .row-footer-below {
-    min-height: 100%; /* 72px is the height of the navbar, 285px is the height of the footer */
+    min-height: 100%;
+    /* 72px is the height of the navbar, 285px is the height of the footer */
   }
 
   .auth-margin {
@@ -109,7 +112,7 @@ img {
     margin-bottom: 50px;
   }
 
-  .max-height-mobile > .ant-card-body {
+  .max-height-mobile>.ant-card-body {
     max-height: 70vh;
     overflow-y: scroll;
   }
@@ -168,6 +171,24 @@ img {
   z-index: 800 !important;
 }
 
+.headroom {
+  will-change: transform;
+}
+
+.headroom--unfixed {
+  transform: translateY(0);
+}
+
+.headroom--unpinned {
+  transform: translateY(-100%);
+  transition: none !important;
+}
+
+.headroom--pinned {
+  transform: translateY(0);
+  transition: transform .3s cubic-bezier(.4, 0, .2, 1) !important;
+}
+
 .headroom-wrapper {
   z-index: 800;
   height: fit-content !important;
@@ -199,6 +220,7 @@ img {
   width: calc(100% - 200px);
   float: left;
 }
+
 .navbar-menu .ant-layout-header {
   padding: 0 20px;
 }
@@ -256,8 +278,8 @@ img {
   padding: 0;
 }
 
-.ant-drawer-body .ant-menu-horizontal > .ant-menu-item,
-.ant-drawer-body .ant-menu-horizontal > .ant-menu-submenu {
+.ant-drawer-body .ant-menu-horizontal>.ant-menu-item,
+.ant-drawer-body .ant-menu-horizontal>.ant-menu-submenu {
   display: inline-block;
   width: 100%;
 }
@@ -266,7 +288,7 @@ img {
   border-bottom: none;
 }
 
-.ant-drawer-body .ant-menu-horizontal > .ant-menu-item:hover {
+.ant-drawer-body .ant-menu-horizontal>.ant-menu-item:hover {
   border-bottom-color: transparent;
 }
 
@@ -285,15 +307,15 @@ img {
     margin-left: -10px;
   }
 
-  .ant-drawer-title > .brand-font {
+  .ant-drawer-title>.brand-font {
     margin-bottom: 0;
   }
 }
 
-.twitter > span,
-.google > span,
-.github > span,
-.facebook > span {
+.twitter>span,
+.google>span,
+.github>span,
+.facebook>span {
   color: #ffffff;
   transition: color 0.2s;
 }
@@ -316,7 +338,7 @@ img {
   border-color: #1da1f2;
 }
 
-.twitter:hover > span {
+.twitter:hover>span {
   color: #1da1f2;
   transition: color 0.2s;
 }
@@ -335,7 +357,7 @@ img {
   border-color: #db3236;
 }
 
-.google:hover > span {
+.google:hover>span {
   color: #db3236;
   transition: color 0.2s;
 }
@@ -354,7 +376,7 @@ img {
   border-color: #211f1f;
 }
 
-.github:hover > span {
+.github:hover>span {
   color: #211f1f;
   transition: color 0.2s;
 }
@@ -373,7 +395,7 @@ img {
   border-color: #4267b2;
 }
 
-.facebook:hover > span {
+.facebook:hover>span {
   color: #4267b2;
   transition: color 0.2s;
 }
@@ -401,9 +423,11 @@ img {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -560,15 +584,12 @@ footer {
   padding: 0 2px;
 }
 
-.org-image-card > .ant-card-body {
+.org-image-card>.ant-card-body {
   padding: 0;
   border: 0;
 }
 
-.org-image-card
-  > .ant-card-body
-  > .ant-upload-picture-card-wrapper
-  > .ant-upload.ant-upload-select-picture-card {
+.org-image-card>.ant-card-body>.ant-upload-picture-card-wrapper>.ant-upload.ant-upload-select-picture-card {
   width: 100%;
 }
 
@@ -669,7 +690,7 @@ footer {
   min-height: auto;
 }
 
-.ant-steps-item-active > .ant-steps-item-container {
+.ant-steps-item-active>.ant-steps-item-container {
   background-color: #f5fbfb;
   padding: 16px 10px 16px 10px;
   border: 1px solid fade(@primary-color, 60%);
@@ -679,27 +700,23 @@ footer {
   z-index: inherit;
 }
 
-.ant-steps-vertical
-  > .ant-steps-item
-  > .ant-steps-item-container
-  > .ant-steps-item-tail::after {
+.ant-steps-vertical>.ant-steps-item>.ant-steps-item-container>.ant-steps-item-tail::after {
   margin-left: 10px;
   z-index: -1;
 }
 
-.ant-steps-item-active > .ant-steps-item-container > .ant-steps-item-tail {
+.ant-steps-item-active>.ant-steps-item-container>.ant-steps-item-tail {
   margin-top: 34px !important;
   height: 100% !important;
   transition: all 0.1s ease-in;
 }
 
-.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail {
+.ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-tail {
   display: inline-block !important;
   height: 120% !important;
 }
-.ant-steps-item-finish:last-of-type
-  > .ant-steps-item-container
-  > .ant-steps-item-tail {
+
+.ant-steps-item-finish:last-of-type>.ant-steps-item-container>.ant-steps-item-tail {
   display: inline-block !important;
   height: 110% !important;
 }
@@ -715,7 +732,7 @@ footer {
   margin-right: 8px;
 }
 
-.editor-icon > .ant-badge > .ant-badge-dot {
+.editor-icon>.ant-badge>.ant-badge-dot {
   right: 4px;
   top: 26px;
   width: 10px;
@@ -735,7 +752,7 @@ footer {
 }
 
 .tutorial-title-input,
-.tutorial-title-input > .ant-input {
+.tutorial-title-input>.ant-input {
   border-top: 0 !important;
   border-left: 0 !important;
   border-right: 0 !important;
@@ -744,24 +761,21 @@ footer {
   color: black;
 }
 
-.tutorial-title-input > .ant-input-suffix {
+.tutorial-title-input>.ant-input-suffix {
   font-size: 14px;
   font-weight: normal;
 }
 
-.custom-step
-  > .ant-steps-item-container
-  > .ant-steps-item-content
-  > .ant-steps-item-title {
+.custom-step>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title {
   width: 100%;
 }
 
-.tutorial-card > .ant-card-actions > li {
+.tutorial-card>.ant-card-actions>li {
   text-align: right;
   padding: 0 12px;
 }
 
-.tutorial-card > .ant-card-actions {
+.tutorial-card>.ant-card-actions {
   border-top: none;
 }
 
