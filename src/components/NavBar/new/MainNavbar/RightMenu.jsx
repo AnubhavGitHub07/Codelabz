@@ -113,7 +113,7 @@ const RightMenu = ({ mode, onClick }) => {
 
   const classes = useStyles();
 
-  if (matches) {
+  if (matches && mode !== "desktop") {
     return (
       <React.Fragment>
         <List>

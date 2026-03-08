@@ -13,14 +13,45 @@ const MyFeed = () => {
     <div className="myfeed-wrapper">
       <Box className="myfeed-page">
         <main className="myfeed-main">
-          <section className="welcome au au1" data-testId="codefeedTitle">
+          <section className="welcome au au1" data-testid="codefeedTitle">
             <div className="welcome-text">
-              <div className="welcome-greeting">Welcome back, {profile.displayName || "User"}! 👋</div>
-              <div className="welcome-sub">Check out the latest from your <span>CodeLabz Feed</span></div>
+              <h2 className="welcome-greeting">Welcome back, {profile.displayName || "User"}! 👋</h2>
+              <p className="welcome-sub">
+                You've completed <span>12 labs</span> this week. Explore new updates from <span>8 organizations</span> you follow.
+              </p>
+
+              <div className="welcome-stats">
+                <div className="welcome-stat">
+                  <div className="welcome-stat-value">24</div>
+                  <div className="welcome-stat-label">Labs joined</div>
+                </div>
+                <div className="welcome-stat-divider"></div>
+                <div className="welcome-stat">
+                  <div className="welcome-stat-value">12</div>
+                  <div className="welcome-stat-label">Orgs followed</div>
+                </div>
+                <div className="welcome-stat-divider"></div>
+                <div className="welcome-stat">
+                  <div className="welcome-stat-value">156</div>
+                  <div className="welcome-stat-label">Contributions</div>
+                </div>
+              </div>
             </div>
-            <div className="welcome-actions">
-              <button className="welcome-btn primary">Create New</button>
-              <button className="welcome-btn ghost">Settings</button>
+
+            <div className="welcome-illo">
+              <svg viewBox="0 0 116 106" fill="none">
+                <circle cx="58" cy="56" r="48" fill="rgba(255,255,255,0.05)" />
+                <circle cx="58" cy="56" r="34" fill="rgba(255,255,255,0.05)" />
+                <path d="M40 38 L24 56 L40 72" stroke="rgba(255,255,255,0.92)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M76 38 L92 56 L76 72" stroke="rgba(255,255,255,0.92)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M67 32 L49 78" stroke="rgba(255,255,255,0.50)" stroke-width="4" stroke-linecap="round" />
+                <circle className="dot1" cx="58" cy="13" r="5.5" fill="rgba(255,255,255,0.80)" />
+                <circle className="dot2" cx="98" cy="76" r="4.5" fill="rgba(255,255,255,0.60)" />
+                <circle className="dot3" cx="16" cy="82" r="4" fill="rgba(255,255,255,0.50)" />
+                <line x1="58" y1="19.5" x2="58" y2="34" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-dasharray="3 3" />
+                <line x1="94.5" y1="72.5" x2="85" y2="64" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" stroke-dasharray="3 3" />
+                <line x1="19.5" y1="78.5" x2="28" y2="68" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" stroke-dasharray="3 3" />
+              </svg>
             </div>
           </section>
           <OrgsExplore />

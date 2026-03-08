@@ -25,7 +25,7 @@ describe("Codefeed Page | CodeLabz", () => {
     cy.wait(5000);
     cy.get(".email").type(this.credentials.email);
     cy.get(".password").type(this.credentials.password);
-    cy.get(".loginButton").click();
+    cy.get("[data-testid=loginButton]").click();
     cy.wait(5000);
   });
 
@@ -40,6 +40,6 @@ describe("Codefeed Page | CodeLabz", () => {
   it("check header component is present", function () {
     cy.visit(`${this.base_url}dashboard/my_feed`);
     cy.wait(3000);
-    cy.get("[data-testId=codefeedTitle]").should("exist");
+    cy.get("[data-testid=codefeedTitle]").should("exist");
   });
 });
