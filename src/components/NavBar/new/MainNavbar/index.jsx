@@ -41,7 +41,7 @@ function MainNavbar() {
     <Headroom>
       <nav className="main-navbar">
         <div className="nav-logo-container">
-          <div className="nav-logo-text" onClick={() => history.push("/")}>
+          <div className="nav-logo-text" onClick={() => history.push("/")} data-testid="navbarBrand">
             CodeLabz
           </div>
         </div>
@@ -52,6 +52,7 @@ function MainNavbar() {
             value={searchQuery}
             placeholder="Search..."
             onChange={handleSearchChange}
+            data-testid="navbarSearch"
             startAdornment={
               <InputAdornment position="start">
                 <SearchIcon className="nav-search-icon" />
@@ -61,9 +62,7 @@ function MainNavbar() {
         </form>
 
         <div className="nav-right-container">
-          <div className="nav-avatar-circle" onClick={() => history.push("/profile")}>
-            {profile.displayName ? profile.displayName.substring(0, 2).toUpperCase() : "CU"}
-          </div>
+          <RightMenu mode="desktop" />
         </div>
 
         <button className="nav-hamburger-btn" onClick={toggleSlider}>

@@ -98,17 +98,17 @@ const RightMenu = ({ mode, onClick }) => {
   const orgList =
     allowOrgs > 0
       ? organizations.map((org, i) => {
-          return (
-            <Menu.Item key={`org:${i}`}>
-              <Link to={`/org/${org.org_handle}`}>
-                <Avatar src={org.org_image} size="small" className="mr-8 ml-0">
-                  {avatarName(org.org_name)}
-                </Avatar>{" "}
-                {org.org_name}
-              </Link>
-            </Menu.Item>
-          );
-        })
+        return (
+          <Menu.Item key={`org:${i}`}>
+            <Link to={`/org/${org.org_handle}`}>
+              <Avatar src={org.org_image} size="small" className="mr-8 ml-0">
+                {avatarName(org.org_name)}
+              </Avatar>{" "}
+              {org.org_name}
+            </Link>
+          </Menu.Item>
+        );
+      })
       : null;
 
   const classes = useStyles();
@@ -169,27 +169,27 @@ const RightMenu = ({ mode, onClick }) => {
                   />
                   {allowOrgs > 0
                     ? organizations.map((org, i) => (
-                        <Grid item>
-                          <Link to={`/org/${org.org_handle}`}>
-                            <Grid
-                              container
-                              spacing={3}
-                              direction="row"
-                              alignItems="center"
-                            >
-                              <Grid item>
-                                <Avatar
-                                  src={org.org_image}
-                                  className={classes.orgicon}
-                                >
-                                  {avatarName(org.org_name)}
-                                </Avatar>
-                              </Grid>
-                              <Grid item>{org.org_name}</Grid>
+                      <Grid item>
+                        <Link to={`/org/${org.org_handle}`}>
+                          <Grid
+                            container
+                            spacing={3}
+                            direction="row"
+                            alignItems="center"
+                          >
+                            <Grid item>
+                              <Avatar
+                                src={org.org_image}
+                                className={classes.orgicon}
+                              >
+                                {avatarName(org.org_name)}
+                              </Avatar>
                             </Grid>
-                          </Link>
-                        </Grid>
-                      ))
+                            <Grid item>{org.org_name}</Grid>
+                          </Grid>
+                        </Link>
+                      </Grid>
+                    ))
                     : null}
                 </Grid>
               </AccordionDetails>
@@ -258,7 +258,7 @@ const RightMenu = ({ mode, onClick }) => {
           )
         }
         onClick={handleClick}
-        data-testId="nav-user"
+        data-testid="nav-user"
       >
         {acronym}
       </Avatar>
@@ -317,27 +317,27 @@ const RightMenu = ({ mode, onClick }) => {
                 />
                 {allowOrgs > 0
                   ? organizations.map((org, i) => (
-                      <Grid item>
-                        <Link to={`/org/${org.org_handle}`}>
-                          <Grid
-                            container
-                            spacing={3}
-                            direction="row"
-                            alignItems="center"
-                          >
-                            <Grid item>
-                              <Avatar
-                                src={org.org_image}
-                                className={classes.orgicon}
-                              >
-                                {avatarName(org.org_name)}
-                              </Avatar>
-                            </Grid>
-                            <Grid item>{org.org_name}</Grid>
+                    <Grid item>
+                      <Link to={`/org/${org.org_handle}`}>
+                        <Grid
+                          container
+                          spacing={3}
+                          direction="row"
+                          alignItems="center"
+                        >
+                          <Grid item>
+                            <Avatar
+                              src={org.org_image}
+                              className={classes.orgicon}
+                            >
+                              {avatarName(org.org_name)}
+                            </Avatar>
                           </Grid>
-                        </Link>
-                      </Grid>
-                    ))
+                          <Grid item>{org.org_name}</Grid>
+                        </Grid>
+                      </Link>
+                    </Grid>
+                  ))
                   : null}
               </Grid>
             </AccordionDetails>

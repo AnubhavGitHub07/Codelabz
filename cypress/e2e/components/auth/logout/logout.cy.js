@@ -18,17 +18,19 @@ describe("Testing Logout Functionality | CodeLabz", () => {
   it("Logout using Navbar", function () {
     cy.visit(`${this.base_url}`);
     cy.wait(2000);
-    if (cy.get("[data-testid=Logout]").should("not.exist")) {
-      cy.get("[data-test-id=login]").click();
-      cy.wait(2000);
-      cy.get(".email").type(this.credentials.email);
-      cy.get(".password").type(this.credentials.password);
-      cy.get("[data-testid=loginButton]").click();
-      cy.wait(5000);
-      cy.location().should(loc => {
-        expect(loc.href).to.eq(`${this.base_url}dashboard/my_feed`);
-      });
-    }
+    cy.get("body").then($body => {
+      if ($body.find("[data-testid=Logout]").length === 0) {
+        cy.get("[data-test-id=login]").click();
+        cy.wait(2000);
+        cy.get(".email").type(this.credentials.email);
+        cy.get(".password").type(this.credentials.password);
+        cy.get("[data-testid=loginButton]").click();
+        cy.wait(5000);
+        cy.location().should(loc => {
+          expect(loc.href).to.eq(`${this.base_url}dashboard/my_feed`);
+        });
+      }
+    });
     cy.visit(`${this.base_url}`);
     cy.wait(2000);
     cy.get("[data-testid=Logout]").should("exist");
@@ -44,17 +46,19 @@ describe("Testing Logout Functionality | CodeLabz", () => {
   it("Logout using Profile Dropdown", function () {
     cy.visit(`${this.base_url}`);
     cy.wait(2000);
-    if (cy.get("[data-testid=nav-user]").should("not.exist")) {
-      cy.get("[data-test-id=login]").click();
-      cy.wait(2000);
-      cy.get(".email").type(this.credentials.email);
-      cy.get(".password").type(this.credentials.password);
-      cy.get("[data-testid=loginButton]").click();
-      cy.wait(5000);
-      cy.location().should(loc => {
-        expect(loc.href).to.eq(`${this.base_url}dashboard/my_feed`);
-      });
-    }
+    cy.get("body").then($body => {
+      if ($body.find("[data-testid=nav-user]").length === 0) {
+        cy.get("[data-test-id=login]").click();
+        cy.wait(2000);
+        cy.get(".email").type(this.credentials.email);
+        cy.get(".password").type(this.credentials.password);
+        cy.get("[data-testid=loginButton]").click();
+        cy.wait(5000);
+        cy.location().should(loc => {
+          expect(loc.href).to.eq(`${this.base_url}dashboard/my_feed`);
+        });
+      }
+    });
     cy.visit(`${this.base_url}`);
     cy.wait(2000);
     cy.get("[data-testid=nav-user]").should("exist");

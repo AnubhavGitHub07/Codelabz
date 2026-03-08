@@ -13,6 +13,16 @@ const MyFeed = () => {
     <div className="myfeed-wrapper">
       <Box className="myfeed-page">
         <main className="myfeed-main">
+          <section className="welcome au au1" data-testId="codefeedTitle">
+            <div className="welcome-text">
+              <div className="welcome-greeting">Welcome back, {profile.displayName || "User"}! 👋</div>
+              <div className="welcome-sub">Check out the latest from your <span>CodeLabz Feed</span></div>
+            </div>
+            <div className="welcome-actions">
+              <button className="welcome-btn primary">Create New</button>
+              <button className="welcome-btn ghost">Settings</button>
+            </div>
+          </section>
           <OrgsExplore />
           <CodelabzExplore />
         </main>

@@ -95,16 +95,19 @@ describe("Editor Test | CodeLabz", () => {
     cy.wait(2000);
     cy.get(".ql-editor").type("{selectall}{backspace}").clear().should("have.text", "");
     cy.wait(1000);
+    cy.get(".ql-bold").click().should("have.class", "ql-active");
     cy.get(".ql-editor")
-      .type("{ctrl}b")
-      .type("bold")
-      .type("{ctrl}b")
+      .type("bold");
+    cy.get(".ql-bold").click().should("not.have.class", "ql-active");
+    cy.get(".ql-editor")
       .type("{enter}");
     cy.get(".ql-italic").click();
     cy.get(".ql-editor").type("italic");
     cy.get(".ql-italic").click();
     cy.get(".ql-editor").type("{rightarrow}{enter}");
-    cy.get(".ql-editor").type("{ctrl}u").type("underlined").type("{ctrl}u");
+    cy.get(".ql-underline").click().should("have.class", "ql-active");
+    cy.get(".ql-editor").type("underlined");
+    cy.get(".ql-underline").click().should("not.have.class", "ql-active");
     cy.get("[data-testId=previewMode]").click();
     cy.fixture("editor").then(editorTestData => {
       cy.get("[data-testid=tutorial-content]").should(
