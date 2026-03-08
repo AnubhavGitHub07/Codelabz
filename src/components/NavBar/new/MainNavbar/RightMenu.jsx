@@ -27,6 +27,8 @@ import {
 import { useTheme } from "@mui/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const useStyles = makeStyles(theme => ({
   menu: {
@@ -98,22 +100,22 @@ const RightMenu = ({ mode, onClick }) => {
   const orgList =
     allowOrgs > 0
       ? organizations.map((org, i) => {
-          return (
-            <Menu.Item key={`org:${i}`}>
-              <Link to={`/org/${org.org_handle}`}>
-                <Avatar src={org.org_image} size="small" className="mr-8 ml-0">
-                  {avatarName(org.org_name)}
-                </Avatar>{" "}
-                {org.org_name}
-              </Link>
-            </Menu.Item>
-          );
-        })
+        return (
+          <Menu.Item key={`org:${i}`}>
+            <Link to={`/org/${org.org_handle}`}>
+              <Avatar src={org.org_image} size="small" className="mr-8 ml-0">
+                {avatarName(org.org_name)}
+              </Avatar>{" "}
+              {org.org_name}
+            </Link>
+          </Menu.Item>
+        );
+      })
       : null;
 
   const classes = useStyles();
 
-  if (matches) {
+  if (matches && mode !== "desktop") {
     return (
       <React.Fragment>
         <List>
@@ -169,27 +171,27 @@ const RightMenu = ({ mode, onClick }) => {
                   />
                   {allowOrgs > 0
                     ? organizations.map((org, i) => (
-                        <Grid item>
-                          <Link to={`/org/${org.org_handle}`}>
-                            <Grid
-                              container
-                              spacing={3}
-                              direction="row"
-                              alignItems="center"
-                            >
-                              <Grid item>
-                                <Avatar
-                                  src={org.org_image}
-                                  className={classes.orgicon}
-                                >
-                                  {avatarName(org.org_name)}
-                                </Avatar>
-                              </Grid>
-                              <Grid item>{org.org_name}</Grid>
+                      <Grid item>
+                        <Link to={`/org/${org.org_handle}`}>
+                          <Grid
+                            container
+                            spacing={3}
+                            direction="row"
+                            alignItems="center"
+                          >
+                            <Grid item>
+                              <Avatar
+                                src={org.org_image}
+                                className={classes.orgicon}
+                              >
+                                {avatarName(org.org_name)}
+                              </Avatar>
                             </Grid>
-                          </Link>
-                        </Grid>
-                      ))
+                            <Grid item>{org.org_name}</Grid>
+                          </Grid>
+                        </Link>
+                      </Grid>
+                    ))
                     : null}
                 </Grid>
               </AccordionDetails>
@@ -232,36 +234,41 @@ const RightMenu = ({ mode, onClick }) => {
   }
 
   return (
-    <Grid
-      container
-      style={{
-        marginRight: "2rem"
-      }}
-    >
-      <Avatar
-        style={{
-          backgroundColor:
-            profile.photoURL && profile.photoURL.length > 0
-              ? "#fffff"
-              : "#3AAFA9",
-          marginLeft: "1rem",
-          marginBottom: ".2rem",
-          cursor: "pointer"
-        }}
-        size={mode === "inline" ? "default" : "medium"}
-        src={profile.photoURL}
-        icon={
-          acronym ? null : (
-            <PersonOutlineOutlinedIcon
-              style={{ fontSize: mode === "inline" ? "1rem" : "1.4rem" }}
-            />
-          )
-        }
-        onClick={handleClick}
-        data-testId="nav-user"
-      >
-        {acronym}
-      </Avatar>
+    <div className="nav-actions-container">
+      {/* Notifications */}
+      <div className="nav-notif-btn">
+        <NotificationsNoneOutlinedIcon style={{ fontSize: '1.4rem', color: 'var(--muted)' }} />
+        <div className="notif-dot"></div>
+      </div>
+
+      <div className="nav-divider"></div>
+
+      {/* Profile Widget */}
+      <div className="nav-profile-widget" onClick={handleClick} data-testid="nav-user">
+        <div className="nav-profile-avatar-wrap">
+          <Avatar
+            className="nav-profile-avatar"
+            style={{
+              backgroundColor:
+                profile.photoURL && profile.photoURL.length > 0
+                  ? "#fffff"
+                  : "#3AAFA9",
+            }}
+            size="medium"
+            src={profile.photoURL}
+          >
+            {acronym}
+          </Avatar>
+          <div className="profile-status-dot"></div>
+        </div>
+
+        <div className="nav-profile-info">
+          <div className="nav-profile-name">{profile.displayName || "Codelabz User"}</div>
+          <div className="nav-profile-handle">@{profile.username || "codelabzuser"}</div>
+        </div>
+
+        <KeyboardArrowDownIcon className="nav-profile-chevron" />
+      </div>
       <Menu
         id="fade-menu"
         anchorEl={anchorEl}
@@ -317,27 +324,27 @@ const RightMenu = ({ mode, onClick }) => {
                 />
                 {allowOrgs > 0
                   ? organizations.map((org, i) => (
-                      <Grid item>
-                        <Link to={`/org/${org.org_handle}`}>
-                          <Grid
-                            container
-                            spacing={3}
-                            direction="row"
-                            alignItems="center"
-                          >
-                            <Grid item>
-                              <Avatar
-                                src={org.org_image}
-                                className={classes.orgicon}
-                              >
-                                {avatarName(org.org_name)}
-                              </Avatar>
-                            </Grid>
-                            <Grid item>{org.org_name}</Grid>
+                    <Grid item>
+                      <Link to={`/org/${org.org_handle}`}>
+                        <Grid
+                          container
+                          spacing={3}
+                          direction="row"
+                          alignItems="center"
+                        >
+                          <Grid item>
+                            <Avatar
+                              src={org.org_image}
+                              className={classes.orgicon}
+                            >
+                              {avatarName(org.org_name)}
+                            </Avatar>
                           </Grid>
-                        </Link>
-                      </Grid>
-                    ))
+                          <Grid item>{org.org_name}</Grid>
+                        </Grid>
+                      </Link>
+                    </Grid>
+                  ))
                   : null}
               </Grid>
             </AccordionDetails>
@@ -375,7 +382,7 @@ const RightMenu = ({ mode, onClick }) => {
           </Typography>
         </MenuItem>
       </Menu>
-    </Grid>
+    </div>
   );
 };
 
