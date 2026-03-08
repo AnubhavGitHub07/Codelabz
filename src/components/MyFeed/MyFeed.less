@@ -190,12 +190,29 @@
     animation: fadeUp .35s var(--ease) both;
 }
 
-.au1 { animation-delay: .04s; }
-.au2 { animation-delay: .08s; }
-.au3 { animation-delay: .12s; }
-.au4 { animation-delay: .16s; }
-.au5 { animation-delay: .20s; }
-.au6 { animation-delay: .24s; }
+.au1 {
+    animation-delay: .04s;
+}
+
+.au2 {
+    animation-delay: .08s;
+}
+
+.au3 {
+    animation-delay: .12s;
+}
+
+.au4 {
+    animation-delay: .16s;
+}
+
+.au5 {
+    animation-delay: .20s;
+}
+
+.au6 {
+    animation-delay: .24s;
+}
 
 /* ─── WELCOME BANNER ────────────────────────────────────────────── */
 .welcome {
@@ -360,14 +377,29 @@
         overflow: visible;
     }
 
-    .dot1 { animation: float 3s ease-in-out infinite; }
-    .dot2 { animation: float 3.5s ease-in-out infinite .5s; }
-    .dot3 { animation: float 4s ease-in-out infinite 1s; }
+    .dot1 {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .dot2 {
+        animation: float 3.5s ease-in-out infinite .5s;
+    }
+
+    .dot3 {
+        animation: float 4s ease-in-out infinite 1s;
+    }
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-4px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
 }
 
 /* ─── SIDEBAR CARDS ─────────────────────────────────────────────── */
@@ -422,18 +454,23 @@
     }
 }
 
-.show-more-tags {
-    margin-top: 8px;
+.s-show-more {
+    margin-top: 10px;
     width: 100%;
-    padding: 6px;
+    padding: 8px;
     border-radius: var(--r-sm);
     border: 1.5px dashed var(--border);
     background: none;
     font-family: inherit;
     font-size: .74rem;
+    font-weight: 600;
     color: var(--muted);
     cursor: pointer;
     transition: all var(--t);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
 
     &:hover {
         border-color: var(--teal);
@@ -1117,10 +1154,25 @@
     flex-shrink: 0;
 }
 
-.pill-views { background: #ECFEFF; color: #0891B2; }
-.pill-fire  { background: #FFFAEB; color: #B45309; }
-.pill-star  { background: #F0FDFA; color: #0D9488; }
-.pill-feat  { background: #DBEAFE; color: #1D4ED8; }
+.pill-views {
+    background: #ECFEFF;
+    color: #0891B2;
+}
+
+.pill-fire {
+    background: #FFFAEB;
+    color: #B45309;
+}
+
+.pill-star {
+    background: #F0FDFA;
+    color: #0D9488;
+}
+
+.pill-feat {
+    background: #DBEAFE;
+    color: #1D4ED8;
+}
 
 /* ─── MOBILE BOTTOM NAV ─────────────────────────────────────────── */
 .mob-nav {

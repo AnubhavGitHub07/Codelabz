@@ -40,9 +40,14 @@ function MainNavbar() {
   return (
     <Headroom>
       <nav className="main-navbar">
-        <div className="nav-logo-container">
-          <div className="nav-logo-text" onClick={() => history.push("/")} data-testid="navbarBrand">
-            CodeLabz
+        <div className="nav-left-section">
+          <div className="nav-logo-container">
+            <div className="nav-logo-text" onClick={() => history.push("/")} data-testid="navbarBrand">
+              CodeLabz
+            </div>
+          </div>
+          <div className="nav-desktop-menu">
+            <LeftMenu mode="desktop" />
           </div>
         </div>
 
@@ -50,7 +55,7 @@ function MainNavbar() {
           <InputBase
             className="nav-search-input"
             value={searchQuery}
-            placeholder="Search..."
+            placeholder="Search codelabz, orgs, topics..."
             onChange={handleSearchChange}
             data-testid="navbarSearch"
             startAdornment={

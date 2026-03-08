@@ -8,8 +8,9 @@
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 0 40px;
+    gap: 24px;
     box-shadow: var(--sh-sm);
 
     @media (max-width: 980px) {
@@ -18,22 +19,66 @@
     }
 }
 
-.nav-logo-container {
+.nav-left-section {
     display: flex;
     align-items: center;
-    min-width: unset;
+    gap: 32px;
+
+    @media (max-width: 1100px) {
+        gap: 16px;
+    }
 
     @media (max-width: 980px) {
         order: 2;
     }
 }
 
+.nav-desktop-menu {
+    @media (max-width: 980px) {
+        display: none;
+    }
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: .88rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all var(--t);
+
+    &:hover {
+        color: var(--teal);
+        background: var(--bg);
+    }
+
+    &.active {
+        color: var(--teal);
+        background: #E8F6F5; // Lightest teal for active pill
+        font-weight: 700;
+    }
+}
+
+.nav-logo-container {
+    display: flex;
+    align-items: center;
+    min-width: unset;
+}
+
 .nav-logo-text {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 400;
+    font-family: var(--f-head); // Use the serif font for logo
+    font-size: 1.4rem;
+    font-weight: 800;
     color: var(--navy);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     text-decoration: none;
     white-space: nowrap;
     flex-shrink: 0;
@@ -46,11 +91,13 @@
 
 
 .nav-search-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 500px;
+    position: relative;
+    flex: 1;
+    margin: 0 40px;
+
+    @media (max-width: 1100px) {
+        max-width: 320px;
+    }
 
     @media (max-width: 768px) {
         position: relative;
@@ -65,135 +112,211 @@
 
 .nav-search-input {
     width: 100%;
-    height: 40px;
-    padding: 0 16px;
+    height: 44px;
+    padding: 0 18px;
     border: 1.5px solid var(--border);
-    border-radius: 40px;
-    background: var(--bg);
-    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    border-radius: 14px; // Squircle round
+    background: #F8FAFC; // Very light grey
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: .84rem;
     color: var(--text);
     outline: none;
     transition: all .25s cubic-bezier(.4, 0, .2, 1);
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
 
     input {
         text-align: left;
-        padding-right: 0;
-        transition: text-align .15s ease;
-
-        @media (max-width: 640px) {
-            text-align: center;
-            padding-right: 28px;
-
-            &:focus {
-                text-align: left;
-                padding-right: 0;
-            }
-        }
     }
 
     &::placeholder {
-        color: var(--muted);
+        color: #94A3B8;
         font-weight: 500;
-        opacity: .6;
-    }
-
-    @media (max-width: 640px) {
-        height: 36px;
-        font-size: .78rem;
-        padding: 0 12px;
-    }
-
-    @media (max-width: 480px) {
-        &::placeholder {
-            color: transparent;
-        }
+        opacity: .8;
     }
 
     &:hover {
-        border-color: #94A3B8;
+        border-color: #CBD5E1;
     }
 
     &.Mui-focused {
         border-color: var(--teal);
         background: #fff;
-        box-shadow: 0 0 0 3px var(--teal-glow);
-
-        @media (max-width: 480px) {
-            &::placeholder {
-                color: var(--muted);
-            }
-        }
+        box-shadow: 0 0 0 4px rgba(14, 165, 160, 0.1);
     }
 }
 
 .nav-search-icon {
-    color: var(--muted);
-    font-size: 1.1rem !important;
-    transition: color .2s ease;
-    flex-shrink: 0;
-
-    @media (max-width: 640px) {
-        font-size: 1rem !important;
-    }
-}
-
-.nav-search-input.Mui-focused .nav-search-icon,
-.nav-search-container:focus-within .nav-search-icon {
-    color: var(--teal);
+    color: #94A3B8;
+    font-size: 1.2rem !important;
 }
 
 .nav-right-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     justify-content: flex-end;
 
     @media (max-width: 980px) {
         order: 4;
+        gap: 8px;
     }
 }
 
-.nav-avatar-circle {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-    color: #fff;
-    font-family: 'Outfit', sans-serif;
-    font-size: .75rem;
-    font-weight: 700;
+.nav-actions-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 
     @media (max-width: 640px) {
-        width: 32px;
-        height: 32px;
-        font-size: .65rem;
+        gap: 8px;
     }
+}
 
+.nav-notif-btn {
+    width: 42px;
+    height: 42px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    flex-shrink: 0;
-    border: 2px solid var(--teal-light);
-    transition: transform var(--t),
-    box-shadow var(--t);
+    position: relative;
+    transition: all var(--t);
 
     &:hover {
-        transform: scale(1.08);
-        box-shadow: 0 0 0 3px var(--teal-glow);
+        background: var(--bg);
+        border-color: #CBD5E1;
     }
+
+    .notif-dot {
+        display: none; // Removed red dot
+        position: absolute;
+        top: 10px;
+        right: 11px;
+        width: 7px;
+        height: 7px;
+        background: #F87171;
+        border: 1.5px solid #fff;
+        border-radius: 50%;
+    }
+
+    @media (max-width: 640px) {
+        width: 36px;
+        height: 36px;
+
+        svg {
+            font-size: 1.2rem !important;
+        }
+
+        .notif-dot {
+            top: 7px;
+            right: 8px;
+        }
+    }
+}
+
+.nav-divider {
+    width: 1px;
+    height: 24px;
+    background: var(--border);
+}
+
+.nav-profile-widget {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 6px 4px 4px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all var(--t);
+
+    &:hover {
+        background: var(--bg);
+        border-color: #CBD5E1;
+    }
+
+    @media (max-width: 640px) {
+        padding: 0;
+        border: none;
+        gap: 0;
+
+        &:hover {
+            background: none;
+        }
+
+        .nav-profile-info,
+        .nav-profile-chevron {
+            display: none;
+        }
+    }
+}
+
+.nav-profile-avatar-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.nav-profile-avatar {
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 10px !important; // Rounded square
+    font-size: .75rem !important;
+    font-weight: 700 !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    @media (max-width: 640px) {
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
+
+.profile-status-dot {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 10px;
+    height: 10px;
+    background: #22C55E;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.nav-profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.nav-profile-name {
+    font-size: .88rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.1;
+}
+
+.nav-profile-handle {
+    font-size: .7rem;
+    font-weight: 500;
+    color: var(--muted);
+}
+
+.nav-profile-chevron {
+    color: var(--muted);
+    font-size: 1.2rem !important;
+    margin-left: -4px;
 }
 
 .nav-hamburger-btn {
     display: none;
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 42px;
     border: 1.5px solid var(--border);
-    border-radius: var(--r-sm);
+    border-radius: 12px;
     background: none;
     cursor: pointer;
     color: var(--text);
@@ -208,8 +331,8 @@
     }
 
     @media (max-width: 640px) {
-        width: 32px;
-        height: 32px;
+        width: 36px;
+        height: 36px;
     }
 
     &:hover {

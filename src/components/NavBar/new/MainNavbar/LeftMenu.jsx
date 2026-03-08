@@ -71,31 +71,20 @@ const LeftMenu = ({ mode, onClick }) => {
   }
 
   return (
-    <React.Fragment>
-      <Menu
-        id="simple-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-        className={classes.menu}
-        elevation={1}
-      >
-        <MenuItem key="/tutorials">
-          <NavLink to="/tutorials">Tutorials</NavLink>
-        </MenuItem>
-        {allowDashboard && (
-          <MenuItem key="my-code-feed">
-            <NavLink to="/dashboard/my_feed">My CodeFeed</NavLink>
-          </MenuItem>
-        )}
-        {allowDashboard && permissions.length > 0 && (
-          <MenuItem key="/organization">
-            <NavLink to="/organization">Organizations</NavLink>
-          </MenuItem>
-        )}
-      </Menu>
-    </React.Fragment>
+    <div className="nav-links">
+      <NavLink to="/dashboard/my_feed" className="nav-link" activeClassName="active">
+        Feed
+      </NavLink>
+      <NavLink to="/discover" className="nav-link" activeClassName="active">
+        Discover
+      </NavLink>
+      <NavLink to="/labs" className="nav-link" activeClassName="active">
+        Labs
+      </NavLink>
+      <NavLink to="/organization" className="nav-link" activeClassName="active">
+        Organizations
+      </NavLink>
+    </div>
   );
 };
 
