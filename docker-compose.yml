@@ -1,30 +1,33 @@
-version: "3.3"
+# =============================================================================
+# Codelabz — Production Docker Compose
+# =============================================================================
+# Usage:
+#   docker compose up --build
+#   docker compose up -d          # detached mode
+#   docker compose down            # stop and remove containers
+# =============================================================================
 
 services:
   app:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        VITE_APP_FIREBASE_API_KEY: ${VITE_APP_FIREBASE_API_KEY}
+        VITE_APP_AUTH_DOMAIN: ${VITE_APP_AUTH_DOMAIN}
+        VITE_APP_FIREBASE_PROJECT_ID: ${VITE_APP_FIREBASE_PROJECT_ID}
+        VITE_APP_FIREBASE_STORAGE_BUCKET: ${VITE_APP_FIREBASE_STORAGE_BUCKET}
+        VITE_APP_FIREBASE_MESSAGING_SENDER_ID: ${VITE_APP_FIREBASE_MESSAGING_SENDER_ID}
+        VITE_APP_FIREBASE_APP_ID: ${VITE_APP_FIREBASE_APP_ID}
+        VITE_APP_FIREBASE_MEASUREMENTID: ${VITE_APP_FIREBASE_MEASUREMENTID}
+        VITE_APP_DATABASE_URL: ${VITE_APP_DATABASE_URL}
+        VITE_APP_FIREBASE_FCM_VAPID_KEY: ${VITE_APP_FIREBASE_FCM_VAPID_KEY}
     ports:
-      - 5173:5173
-    volumes:
-      - .:/app
-    networks:
-      - main
-  emulator:
-    image: spine3/firebase-emulator
-    environment:
-      ENABLE_UI: true
-      GCP_PROJECT: demo-sampark
-    ports:
-      - 5001:5001
-      - 9000:9000
-      - 8080:8080
-      - 8085:8085
-      - 5000:5000
-      - 4000:4000
-    networks:
-      - main
-
-networks:
-  main: {}
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "curl", "-sf", "http://localhost/" ]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
