@@ -1,0 +1,71 @@
+# =============================================================================
+# Codelabz — .dockerignore
+# =============================================================================
+# Exclude files that are not needed in the Docker build context.
+# This dramatically speeds up builds and reduces image size.
+# =============================================================================
+
+# ── Dependencies (re-installed inside the container) ──────────────────────────
+node_modules
+functions/node_modules
+
+# ── Build outputs ─────────────────────────────────────────────────────────────
+dist
+build
+.firebase
+
+# ── Version control ───────────────────────────────────────────────────────────
+.git
+.gitignore
+
+# ── Environment & secrets ─────────────────────────────────────────────────────
+.env
+.env.*
+!.env.sample
+
+# ── IDE / editor configs ─────────────────────────────────────────────────────
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+cypress
+cypress.config.js
+coverage
+
+# ── Documentation & design assets ────────────────────────────────────────────
+docs
+designs
+*.md
+!README.md
+ISSUE_TEMPLATE
+
+# ── Storybook ─────────────────────────────────────────────────────────────────
+.storybook
+
+# ── Firebase debug logs ───────────────────────────────────────────────────────
+*-debug.log
+firebase-debug.log
+firestore-debug.log
+database-debug.log
+pubsub-debug.log
+ui-debug.log
+
+# ── CI / GitHub files ─────────────────────────────────────────────────────────
+.github
+.husky
+
+# ── Docker files (no need to send themselves into the context) ────────────────
+Dockerfile
+Dockerfile.dev
+docker-compose.yml
+docker-compose.dev.yml
+.dockerignore
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+Makefile
+.prettierrc
+.prettierignore
+.eslintrc.cjs

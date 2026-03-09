@@ -1,0 +1,32 @@
+# =============================================================================
+# Codelabz — Development Docker Compose
+# =============================================================================
+# Usage:
+#   docker compose -f docker-compose.dev.yml up --build
+#   docker compose -f docker-compose.dev.yml down
+# =============================================================================
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173" # Vite dev server
+      - "4000:4000" # Firebase Emulator UI
+      - "9099:9099" # Auth emulator
+      - "8080:8080" # Firestore emulator
+      - "9000:9000" # Realtime Database emulator
+      - "5001:5001" # Functions emulator
+      - "8085:8085" # Pub/Sub emulator
+      - "9199:9199" # Storage emulator
+    volumes:
+      - ./src:/app/src # Hot-reload for source changes
+      - ./public:/app/public # Hot-reload for public assets
+      - ./index.html:/app/index.html # Hot-reload for index.html
+      - ./vite.config.js:/app/vite.config.js
+      - /app/node_modules # Prevent overwriting container node_modules
+    env_file:
+      - .env
+    environment:
+      - VITE_APP_USE_EMULATOR=true
