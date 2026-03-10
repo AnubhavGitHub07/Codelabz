@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Card, Box, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import HtmlTextRenderer from "../../Tutorials/subComps/HtmlTextRenderer";
+import { StepMediaPanel } from "../../MediaUpload";
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -10,7 +11,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const Tutorial = ({ steps }) => {
+const Tutorial = ({ steps, tutorialId }) => {
   const classes = useStyles();
   return (
     <>
@@ -24,6 +25,11 @@ const Tutorial = ({ steps }) => {
               <Typography className="content">
                 <HtmlTextRenderer html={step.content} />
               </Typography>
+              <StepMediaPanel
+                tutorialId={tutorialId}
+                stepId={step.id}
+                editable={false}
+              />
             </Box>
           );
         })}

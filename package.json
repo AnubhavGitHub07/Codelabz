@@ -73,6 +73,7 @@
     "start-server-and-test": "^1.15.3",
     "swiper": "^10.2.0",
     "url": "^0.11.0",
+    "uuid": "^13.0.0",
     "validator": "^13.6.0",
     "y-quill": "^0.1.5",
     "yjs": "^13.6.6"

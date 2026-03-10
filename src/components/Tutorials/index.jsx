@@ -21,6 +21,7 @@ import { useFirebase, useFirestore } from "react-redux-firebase";
 import Spinner from "../../helpers/spinner";
 import AddNewStepModal from "./subComps/AddNewStep";
 import QuillEditor from "../Editor/QuillEditor";
+import { StepMediaPanel } from "../MediaUpload";
 import HtmlTextRenderer from "./subComps/HtmlTextRenderer";
 import { Collapse, Button } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -268,6 +269,11 @@ const ViewTutorial = () => {
                     {mode === "view" && (
                       <div data-testId="tutorial-content">
                         <HtmlTextRenderer html={currentStepContent} />
+                        <StepMediaPanel
+                          tutorialId={tutorialData.tutorial_id}
+                          stepId={stepsData[currentStep].id}
+                          editable={false}
+                        />
                       </div>
                     )}
                     {mode === "edit" && (
@@ -290,6 +296,12 @@ const ViewTutorial = () => {
                             stepsData[currentStep].id
                           }
                           mode={mode}
+                        />
+
+                        <StepMediaPanel
+                          tutorialId={tutorialData.tutorial_id}
+                          stepId={stepsData[currentStep].id}
+                          editable={true}
                         />
                       </>
                     )}

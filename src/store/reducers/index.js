@@ -7,6 +7,7 @@ import orgReducer from "./orgReducer";
 import tutorialsReducer from "./tutorialsReducer";
 import tutorialPageReducers from "./tutorialPageReducers";
 import notificationReducers from "./notificationReducers";
+import mediaReducer from "./mediaReducer";
 
 // Add firebase to reducers
 const rootReducer = combineReducers({
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   org: orgReducer,
   tutorials: tutorialsReducer,
   tutorialPage: tutorialPageReducers,
-  notifications: notificationReducers
+  notifications: notificationReducers,
+  media: mediaReducer
 });
 
 export default rootReducer;
