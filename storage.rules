@@ -1,8 +1,17 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
+    // Default: read is public, write requires auth
     match /{allPaths=**} {
-      allow read, write: if true;
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    // Media uploads for tutorial steps — auth required, 200 MB size limit
+    match /tutorials/{tutorialId}/steps/{stepId}/media/{mediaId} {
+      allow read: if true;
+      allow write: if request.auth != null
+                   && request.resource.size < 200 * 1024 * 1024;
     }
   }
 }

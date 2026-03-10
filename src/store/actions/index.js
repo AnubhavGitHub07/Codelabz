@@ -94,3 +94,14 @@ export {
 export {
   getRecommendedTutorials,
 } from "./tutorialPageActions";
+export {
+  addStepMedia,
+  removeStepMedia,
+  fetchStepMedia,
+  clearStepMediaState,
+  getMediaType,
+  getAllAcceptedTypes,
+  ACCEPTED_TYPES,
+  MAX_SIZES,
+  MAX_ITEMS_PER_STEP
+} from "./mediaActions";

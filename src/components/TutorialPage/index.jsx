@@ -35,7 +35,7 @@ function TutorialPage({ background = "white", textColor = "black" }) {
   useEffect(() => {
     getTutorialData(id)(firebase, firestore, dispatch);
     getTutorialSteps(id)(firebase, firestore, dispatch);
-    return () => {};
+    return () => { };
   }, []);
   const tutorial = useSelector(
     ({
@@ -141,7 +141,7 @@ function TutorialPage({ background = "white", textColor = "black" }) {
           xs={6}
         >
           <PostDetails details={postDetails} />
-          <Tutorial steps={steps} />
+          <Tutorial steps={steps} tutorialId={id} />
           <CommentBox
             commentsArray={commentsArray}
             onAddComment={handleAddComment}
