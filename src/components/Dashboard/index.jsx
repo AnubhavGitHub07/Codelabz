@@ -226,8 +226,7 @@ const Dashboard = ({ background = "white", textColor = "black" }) => {
       if (showOrgForm) {
         validateHandle(
           checkOrgHandleExists,
-          firebase,
-          dispatch,
+          firestore,
           orgHandle,
           setOrgHandleValidateError,
           setOrgHandleValidateErrorMessage,
@@ -447,8 +446,8 @@ const Dashboard = ({ background = "white", textColor = "black" }) => {
                     {showOrgForm === false
                       ? "I want to create an organization"
                       : showOrgForm === true
-                      ? "I don't want to create an organization"
-                      : "I want to create an organization"}
+                        ? "I don't want to create an organization"
+                        : "I want to create an organization"}
                   </Button>
                 </Box>
               </Card>
